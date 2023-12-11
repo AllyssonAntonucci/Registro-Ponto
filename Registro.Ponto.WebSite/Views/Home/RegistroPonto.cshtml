@@ -1,0 +1,30 @@
+﻿
+<form class="form-container" asp-controller="Home" asp-action="RegistroPonto" method="post">
+    <h1>Registrar Ponto</h1>
+
+    <input type="text" class="form-input" name="username" placeholder="Nome de usuário" maxlength="25" required />
+
+    <input type="password" class="form-input" name="password" placeholder="Senha" minlength="5" maxlength="25" required />
+
+    <button type="Submit" class="form-btn">Registrar</button>
+
+    <p>Não tem uma conta? <a asp-action="Cadastro">Cadastre-se</a></p>
+
+    @if (TempData["mensagemFalhaRegistro"] != null)
+    {
+        <div id="mensagem" class="alert alert-danger" role="alert">
+            <p>@TempData["mensagemFalhaRegistro"]</p>
+        </div>
+    }
+</form>
+
+
+@if (TempData["mensagemRegistro"] != null)
+{
+    <div class="registroPonto-container active">
+        <p>@TempData["mensagemRegistro"]</p>
+        <i class="fa-solid fa-circle-check"></i>
+        <button type="button" onclick="fecharAvisoSucessoRegistro()" id="btnFechar" class="btn-registro" aria-label="Close">Voltar</button>
+    </div> 
+}
+

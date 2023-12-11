@@ -1,0 +1,141 @@
+:root {
+    /*--------------------CORES-----------------------------*/
+    --color1: #53646e;
+    --color2: #dee0e1; 
+    --color3: #f2f7fb; 
+    --color4: #7ffadd;
+    --color5: green;
+    --background: #a2b5c3;
+}
+
+html {
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    background-color: var(--color3);
+    margin-bottom: 60px;
+}
+
+.form-container {
+    height: 100vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}
+
+.form-container h1, .form-container p {
+        margin: 0.5rem auto;
+        text-align: center;
+}
+
+.form-container a {
+    color: var(--color4);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container h2{
+    margin: 2rem auto 0.5rem auto;
+    text-align: center;
+    font-size: 1.375rem;
+}
+
+.form-input {
+    width: 50%;
+    margin: 0.5rem auto;
+    background: var(--color3); 
+    padding: 0.45rem 0 0.4rem 0.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+}
+
+.form-input::placeholder {
+    text-transform: initial;
+}
+
+.form-btn {
+    width: 50%;
+    margin: 1rem auto;
+    padding: 0.45rem 0 0.4rem 0.5rem;
+    background-color: var(--color1);
+    color: var(--color2);
+    font-weight: bold;
+    border: 0;
+    border-radius: 0.5rem
+}
+
+/*---------- Mensagem de Registro de Ponto ----------*/
+.registroPonto-container {
+    display: none;
+}
+
+.registroPonto-container.active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction: column;
+    width: 30%;
+    height: 25vh;
+    min-height: 350px;
+    background-color: var(--color2);
+    border-radius: 1rem;
+}
+
+.registroPonto-container.active p {
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--color1);
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.registroPonto-container.active i {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color5);
+}
+
+.btn-registro {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 30%;
+    padding: 0.45rem 0 0.4rem 0.5rem;
+    background-color: var(--color1);
+    color: var(--color2);
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+/*---------- Responsividade Mensagem de Registro de Ponto ----------*/
+
+@media(max-width: 768px) {
+    .form-container{
+        width: 90%;
+    }
+
+    .registroPonto-container.active {
+        width: 60%;
+        min-height: 250px;
+    }
+}
+

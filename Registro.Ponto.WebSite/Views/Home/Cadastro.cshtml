@@ -1,0 +1,35 @@
+﻿
+<form class="form-container" asp-controller="Home" asp-action="Cadastro" method="post">
+    <h1>Cadastro</h1>
+
+    <input type="text" class="form-input" name="nome" placeholder="Nome" value="@TempData["nome"]" maxlength="25" required />
+
+    <input type="text" class="form-input" name="sobrenome" placeholder="Sobrenome" value="@TempData["sobrenome"]" maxlength="50" required />
+    <h2>Informações para registrar ponto</h2>
+    <input type="text" class="form-input" name="username" placeholder="Nome de usuário" value="@TempData["username"]" maxlength="25" required />
+
+    <input type="password" class="form-input" name="password" placeholder="Senha" minlength="5" maxlength="25" required />
+
+    <input type="password" class="form-input" name="confirmPassword" placeholder="Confirmação de senha" minlength="5" maxlength="25" required />
+    <span class="text-danger">@Html.ValidationMessage("confirmPassword")</span>
+
+    <button type="Submit" class="form-btn">Cadastrar</button>
+
+    <p>Já possui uma conta? <a asp-action="RegistroPonto">Entrar</a></p>
+
+    @if (TempData["mensagemCadastroSucesso"] != null)
+    {
+        <div id="mensagem" class="alert alert-success">
+            @TempData["mensagemCadastroSucesso"]
+        </div>
+    }
+
+    @if (TempData["mensagemCadastroFalha"] != null)
+    {
+        <div id="mensagem" class="alert alert-danger">
+            @TempData["mensagemCadastroFalha"]
+        </div>
+    }
+</form>
+
+
