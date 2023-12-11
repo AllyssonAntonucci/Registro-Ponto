@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#Ignorar appsettings.json
+/Registro.Ponto.WebSite/appsettings.json 
